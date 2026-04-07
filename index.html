@@ -1,274 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darshan Bhandigare - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="scrpt.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Darshan Bhandigare — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-   <div class="container">
-
-        <!-- Profile Card -->
-        <div class="profile-card">
-            <!-- Banner Image -->
-            <div class="banner-image">
-                <img src="https://i.ibb.co/60DL9tf1/linkedin-banner-2.png" alt="Banner">
-            </div>
-
-            <div class="profile-content">
-                <!-- Profile Picture and Basic Info -->
-                <div class="profile-header">
-                    <div style="flex-shrink: 0;">
-                        <img class="profile-picture" src="https://i.ibb.co/dwzsYFmd/1000034369.jpg" alt="Profile Picture">
-                    </div>
-                    <div class="profile-info">
-                        <h1 class="profile-name">Darshan Bhandigare</h1>
-                        <p class="profile-headline">Aspiring Software Developer</p>
-                        <p class="profile-location">D.G. Ruparel College of Arts, Science and Commerce | Mumbai, Maharashtra, India</p>
-
-                        <!-- Contact & Connect Buttons -->
-                        <div class="btn-group">
-                            <a href="#" id="contact-info-btn" class="btn btn-primary">
-                                <i class="fas fa-envelope"></i> Contact Info
-                            </a>
-                            <a href="https://www.linkedin.com/in/darshan-bhandigare/" target="_blank" class="btn btn-outline">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="grid-layout">
-
-            <div class="space-y-4">
-                <!-- Experience Section -->
-                <div class="content-card">
-                    <h2 class="section-title">Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="flex items-center mb-1" style="display: flex; align-items: center; margin-bottom: 0.25rem;">
-                                <div class="timeline-dot"></div>
-                                <h3 class="timeline-title">Foundational Development & Active Learning</h3>
-                            </div>
-                            <p class="timeline-subtitle">Aspiring Software Developer | First Year Student</p>
-                            <p class="timeline-date">Present</p>
-                            <p class="text-body" style="margin-top: 0.5rem;">
-                                My primary focus is on building core technical proficiencies, particularly through
-                                hands-on projects using <b>C/C++</b>, while mastering fundamental data structures and
-                                algorithms. At this stage of my journey, I am dedicated to collaborative learning and
-                                continuous skill development towards becoming a proficient software developer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projects Section -->
-                <div class="content-card">
-                    <h2 class="section-title">Projects</h2>
-                    <div class="projects-grid">
-                        <!-- Project 1 -->
-                        <div class="project-card">
-                            <h3 class="project-title">Portfolio Website</h3>
-                            <p class="project-desc">A personal portfolio website to showcase skills
-                                and projects, built with HTML and CSS.</p>
-                            <a href="https://darshanbhandigare.github.io/" target="_blank" class="project-link">
-                                View Project <i class="fas fa-arrow-right" style="margin-left: 0.25rem;"></i>
-                            </a>
-                        </div>
-                        <!-- Project 2: Paletto Color Generator -->
-                        <div class="project-card">
-                            <h3 class="project-title">Paletto – Color Palette Generator</h3>
-                            <p class="project-desc">A responsive web application that generates clean and useful color palettes for design inspiration and frontend projects.</p>
-                            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <a href="https://paletto-color-generator.vercel.app/" target="_blank" class="project-link">
-                                    Live Demo <i class="fas fa-external-link-alt" style="margin-left: 0.25rem;"></i>
-                                </a>
-                                <a href="https://github.com/darshanbhandigare/paletto-color-generator" target="_blank" class="project-link" style="color: var(--gray-600);">
-                                    <i class="fab fa-github" style="margin-right: 0.25rem;"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications Section -->
-                <div class="content-card">
-                    <h2 class="section-title">Certifications</h2>
-                    <div class="cert-list">
-                        
-                        <!-- Certification Item 1: Deloitte Job Simulation (Virtual Internship) -->
-                        <div class="cert-item">
-                            <div class="cert-icon" style="background-color: #f0fdf4; color: #16a34a;">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h3 class="cert-title">Deloitte Job Simulation (Virtual Internship)</h3>
-                                <p class="cert-issuer">Deloitte / The Forage</p>
-                                <p class="cert-date">Issued: 2025</p>
-                                <div class="cert-links">
-                                    <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_68f110ef8e645218889eb542_1760631026251_completion_certificate.pdf" target="_blank" class="cert-btn" title="View Certificate PDF">
-                                        <i class="fas fa-file-pdf"></i> Show Certificate
-                                    </a>
-                                    <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_68f110ef8e645218889eb542_1760631026251_completion_certificate.pdf" target="_blank" class="cert-btn" title="View Credential">
-                                        <i class="fas fa-link"></i> Show Credential
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 2: Oracle Cloud Infrastructure 2025 Certified Generative AI Professional -->
-                        <div class="cert-item">
-                            <div class="cert-icon" style="background-color: #fefce8; color: #ca8a04;">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h3 class="cert-title">Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</h3>
-                                <p class="cert-issuer">Oracle</p>
-                                <p class="cert-date">Issued: 2025</p>
-                                <div class="cert-links">
-                                    <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=E271C625D729BC583FD445257FB25C0DD47CED1CDB3B73675C885EDD4680DE49" target="_blank" class="cert-btn" title="View Credential Badge">
-                                        <i class="fas fa-link"></i> Show Credential
-                                    </a>
-                                    <a href="https://media.licdn.com/dms/image/v2/D5622AQGJsh547J18SA/feedshare-shrink_800/B56ZoPGATyIsAg-/0/1761189824977?e=1766016000&v=beta&t=ubLwYjcweTt74IsT1usuEIoFb4LJR9xv_FXBK-siv5k" target="_blank" class="cert-btn" title="View Certificate">
-                                        <i class="fas fa-award"></i> Show Certificate
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 3: Artificial Intelligence Fundamentals -->
-                        <div class="cert-item">
-                            <div class="cert-icon" style="background-color: #eef2ff; color: #4f46e5;">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h3 class="cert-title">Artificial Intelligence Fundamentals</h3>
-                                <p class="cert-issuer">Credly</p>
-                                <p class="cert-date">Issued: 2025</p>
-                                <div class="cert-links">
-                                    <a href="https://www.credly.com/badges/e5dfd0f6-cb8b-4b20-8dab-dc0ea95a2f70/linked_in_profile" target="_blank" class="cert-btn" title="View Credential Badge">
-                                        <i class="fas fa-link"></i> Show Credential
-                                    </a>
-                                    <a href="https://media.licdn.com/dms/image/v2/D5622AQFvaddka7cJXA/feedshare-shrink_800/B56ZnlrinKG4Ag-/0/1760495021519?e=1766016000&v=beta&t=Jav-kUEuN9eHo9ZNGeCyRx5uvQx7Mcd0fTVSZtLRTUM" target="_blank" class="cert-btn" title="View Certificate">
-                                        <i class="fas fa-award"></i> Show Certificate
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 4: Web Development Fundamentals -->
-                        <div class="cert-item">
-                            <div class="cert-icon" style="background-color: #fef2f2; color: #b91c1c;">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h3 class="cert-title">Web Development Fundamentals</h3>
-                                <p class="cert-issuer">Credly</p>
-                                <p class="cert-date">Issued: 2025</p>
-                                <div class="cert-links">
-                                    <a href="https://www.credly.com/badges/7d8f1ef0-1ac2-401e-83af-e566c59e7a8b" target="_blank" class="cert-btn" title="View Credential Badge">
-                                        <i class="fas fa-link"></i> Show Credential
-                                    </a>
-                                    <a href="https://media.licdn.com/dms/image/v2/D5622AQHqbhvHphcrmA/feedshare-shrink_1280/B56ZqovuysHQAw-/0/1763767677230?e=1766016000&v=beta&t=X9yyu3w_2yS0WzhD27QW3gbLs3IdxIonvSlY-hiW7Ls" target="_blank" class="cert-btn" title="View Certificate">
-                                        <i class="fas fa-award"></i> Show Certificate
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="sidebar">
-                <!-- About Section (Sidebar) -->
-                <div class="content-card">
-                    <h2 class="section-title">About</h2>
-                    <p class="text-body">
-                        I am currently pursuing a Bachelor of Science in Information Technology at D.G. Ruparel College,
-                        where I'm developing a strong foundation in programming, software development, and
-                        problem-solving. With a passion for technology and continuous learning, I am confident in my
-                        journey to becoming a skilled software developer.
-                    </p>
-                </div>
-
-                <!-- Skills Section (Sidebar) -->
-                <div class="content-card">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="skills-container">
-                        <span class="skill-tag tag-red">C++</span>
-                        <span class="skill-tag tag-amber">Python</span>
-                        <span class="skill-tag tag-orange">Data Structures</span>
-                        <span class="skill-tag tag-teal">Generative AI</span>
-                        <span class="skill-tag tag-cyan">Gen AI for Software Dev</span>
-                        <span class="skill-tag tag-purple">Planning</span>
-                        <span class="skill-tag tag-pink">Formal Communication</span>
-                        <span class="skill-tag tag-dark">
-                            <i class="fab fa-github"></i> Git & GitHub
-                        </span>
-                    </div>
-                </div>
-
-
-                <div class="content-card">
-                    <h2 class="section-title">Education</h2>
-                    <div>
-                        <h3 class="project-title">D.G. Ruparel College of Arts, Science and Commerce</h3>
-                        <p style="color: var(--gray-600);">Bachelor of Science - BS, Information Technology</p>
-                        <p style="color: var(--gray-500); font-size: 0.875rem;">2025 - 2028 (expected)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="main-footer">
-            <div class="footer-links">
-                <a href="https://instagram.com/amazedarshan" target="_blank" class="footer-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://youtube.com/@amazedarshan" target="_blank" class="footer-icon youtube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-            <p class="copyright">&copy; 2025 Darshan Bhandigare. All Rights Reserved.</p>
-        </footer>
+<canvas id="canvas"></canvas>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+ 
+<nav>
+  <div class="nav-logo">DB.portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+ 
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+  <div class="hero-tag">Available for Opportunities</div>
+  <div class="hero-terminal">
+    <span class="prompt">~/darshan</span> <span class="cmd">$ </span><span class="typewriter">cout&lt;&lt;"Hello! My name is Darshan Bhandigare"&lt;&lt;endl;</span>
+  </div>
+  <h1 class="hero-name">Darshan<br><span>Bhandigare</span></h1>
+  <p class="hero-sub">
+    // Aspiring Software Developer<br>
+    // Building with C/C++, DSA & Web Dev<br>
+    // B.Sc. IT @ D.G. Ruparel College, Mumbai
+  </p>
+  <div class="hero-ctas">
+    <a href="#projects" class="btn btn-primary">View Projects →</a>
+    <a href="https://www.linkedin.com/in/darshan-bhandigare/" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+    <a href="mailto:darshanbhandigare9@gmail.com" class="btn btn-outline">Get In Touch</a>
+  </div>
+  </div><!-- end hero-left -->
+ 
+  <div class="hero-photo">
+    <div class="hero-photo-ring"></div>
+    <img src="https://i.ibb.co/JFKF11zd/1000034369.jpg" alt="Darshan Bhandigare" />
+    <div class="hero-photo-tag">Darshan.jpg</div>
+  </div>
+ 
+  <div class="hero-scroll">Scroll to explore</div>
+  <div class="hero-counter">
+    <strong>4</strong><span>Certifications</span>
+    <strong style="margin-top:1rem">2</strong><span>Live Projects</span>
+  </div>
+</section>
+ 
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">About</h2>
+      <div class="section-line"></div>
     </div>
-
-    <!-- Contact Modal Structure -->
-    <div id="contact-modal" class="modal-overlay hidden">
-        <div id="modal-content" class="modal-box">
-            <button id="close-modal-btn" class="close-btn">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3 class="modal-title">
-                <i class="fas fa-envelope" style="color: var(--primary-blue);"></i> Get In Touch
-            </h3>
-            <p style="color: var(--gray-700); margin-bottom: 1rem;">You can reach me directly at:</p>
-            <div class="email-container">
-                <span id="contact-email-display" class="email-text">darshanbhandigare9@gmail.com</span>
-                <button id="copy-email-btn" class="copy-btn" title="Copy to clipboard">
-                    <i class="fas fa-copy"></i>
-                </button>
-            </div>
-            <p id="copy-message" class="copy-success-msg hidden">Copied to clipboard!</p>
-        </div>
+    <div class="about-text">
+      <p>I'm a <strong>first-year B.Sc. Information Technology student</strong> at D.G. Ruparel College of Arts, Science and Commerce in Mumbai — building my foundation one commit at a time.</p>
+      <p>My focus is on <strong>core technical proficiency</strong>: hands-on projects in <strong>C/C++</strong>, data structures, algorithms, and web development. I believe in learning by building — every project is a step forward.</p>
+      <p>I'm passionate about <strong>continuous learning</strong> and actively explore emerging fields like <strong>Generative AI</strong>, having already earned industry certifications from Oracle and IBM.</p>
     </div>
-
-
+  </div>
+  <div class="about-stats reveal">
+    <div class="stat-box">
+      <div class="stat-num">2025</div>
+      <div class="stat-label">Year Started</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="color:var(--accent3)">4+</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="color:var(--accent2)">2</div>
+      <div class="stat-label">Live Projects</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="color:var(--green)">∞</div>
+      <div class="stat-label">Learning Mode</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SKILLS -->
+<section id="skills">
+  <div style="padding: 0">
+    <div class="section-header reveal">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">C / C++</div>
+        <div class="skill-level">Core Language</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-level">Scripting & AI</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">HTML CSS & JS</div>
+        <div class="skill-level">Web Development</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🧠</div>
+        <div class="skill-name">Data Structures</div>
+        <div class="skill-level">Algorithms & Problem Solving</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-name">Generative AI</div>
+        <div class="skill-level">Oracle Certified</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="60"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-name">Git & GitHub</div>
+        <div class="skill-level">Version Control</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="72"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">☕</div>
+        <div class="skill-name">Java</div>
+        <div class="skill-level">Object-Oriented Programming</div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="55"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-card-top">
+        <span class="project-type">Web App</span>
+        <div class="project-links">
+          <a href="https://paletto-color-generator.vercel.app/" target="_blank">Live ↗</a>
+          <a href="https://github.com/darshanbhandigare/paletto-color-generator" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3 class="project-title">Paletto</h3>
+        <p class="project-desc">A responsive web application that generates clean, useful color palettes for design inspiration and frontend projects. Built for designers and developers alike.</p>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Vercel</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-card-top">
+        <span class="project-type">Portfolio</span>
+        <div class="project-links">
+          <a href="https://darshanbhandigare.github.io/" target="_blank">Live ↗</a>
+          <a href="https://github.com/DarshanBhandigare/darshanbhandigare.github.io" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3 class="project-title">Portfolio Website</h3>
+        <p class="project-desc">A personal portfolio website to showcase skills, projects, and certifications. Designed and built from scratch with HTML, CSS and JS, deployed on GitHub Pages.</p>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Javascript</span>
+          <span class="tag">GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-header reveal">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cert-list reveal">
+    <div class="cert-item">
+      <div class="cert-left">
+        <div class="cert-dot" style="background:var(--accent2)"></div>
+        <div>
+          <div class="cert-name">Oracle Cloud Infrastructure 2025 — Generative AI Professional</div>
+          <div class="cert-issuer">Oracle</div>
+        </div>
+      </div>
+      <div class="cert-right">
+        <span class="cert-year">2025</span>
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=E271C625D729BC583FD445257FB25C0DD47CED1CDB3B73675C885EDD4680DE49" target="_blank" class="cert-link">View Credential ↗</a>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-left">
+        <div class="cert-dot" style="background:var(--accent3)"></div>
+        <div>
+          <div class="cert-name">Artificial Intelligence Fundamentals</div>
+          <div class="cert-issuer">IBM / Credly</div>
+        </div>
+      </div>
+      <div class="cert-right">
+        <span class="cert-year">2025</span>
+        <a href="https://www.credly.com/badges/e5dfd0f6-cb8b-4b20-8dab-dc0ea95a2f70/linked_in_profile" target="_blank" class="cert-link">View Credential ↗</a>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-left">
+        <div class="cert-dot" style="background:var(--green)"></div>
+        <div>
+          <div class="cert-name">Web Development Fundamentals</div>
+          <div class="cert-issuer">IBM / Credly</div>
+        </div>
+      </div>
+      <div class="cert-right">
+        <span class="cert-year">2025</span>
+        <a href="https://www.credly.com/badges/7d8f1ef0-1ac2-401e-83af-e566c59e7a8b" target="_blank" class="cert-link">View Credential ↗</a>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-left">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Deloitte Job Simulation — Technology Virtual Internship</div>
+          <div class="cert-issuer">Deloitte / The Forage</div>
+        </div>
+      </div>
+      <div class="cert-right">
+        <span class="cert-year">2025</span>
+        <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_68f110ef8e645218889eb542_1760631026251_completion_certificate.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <h3 class="contact-heading">Let's <em>build</em><br>something.</h3>
+    <p class="contact-sub">I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out — I'll reply as soon as I can.</p>
+    <a href="mailto:darshanbhandigare9@gmail.com" class="contact-email">darshanbhandigare9@gmail.com</a>
+    <div class="hero-ctas">
+      <a href="https://www.linkedin.com/in/darshan-bhandigare/" target="_blank" class="btn btn-primary">LinkedIn ↗</a>
+      <a href="https://github.com/DarshanBhandigare" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="contact-right reveal">
+    <div class="terminal-box">
+      <div class="terminal-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span style="font-size:0.7rem;color:var(--muted);margin-left:0.5rem">bash — darshan@portfolio</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="t-green">darshan</span><span class="t-muted">@portfolio</span> <span class="t-blue">~</span> <span class="t-muted">$</span> whoami</div>
+        <div class="t-muted">Aspiring Software Developer</div>
+        <br>
+        <div><span class="t-green">darshan</span><span class="t-muted">@portfolio</span> <span class="t-blue">~</span> <span class="t-muted">$</span> cat skills.txt</div>
+        <div><span class="t-purple">C/C++</span> · <span class="t-purple">Python</span> · <span class="t-purple">Java</span></div>
+        <div><span class="t-purple">HTML/CSS/JS</span> · <span class="t-purple">DSA</span> · <span class="t-purple">Gen AI</span> · <span class="t-purple">Git</span></div>
+        <br>
+        <div><span class="t-green">darshan</span><span class="t-muted">@portfolio</span> <span class="t-blue">~</span> <span class="t-muted">$</span> echo $STATUS</div>
+        <div style="color:var(--green)">Open to opportunities ✓</div>
+        <br>
+        <div><span class="t-green">darshan</span><span class="t-muted">@portfolio</span> <span class="t-blue">~</span> <span class="t-muted">$</span> <span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <span>© 2025 Darshan Bhandigare. All Rights Reserved.</span>
+  <span>Built with HTML · CSS · JS</span>
+</footer>
+<script src="script.js"></script>
 </body>
-
-
 </html>
