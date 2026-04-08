@@ -13,10 +13,6 @@ A personal portfolio website built with **HTML**, **CSS** and **JS**, designed t
 
 ---
 
-## 🚀 Live Demo
-
-👉 [darshanbhandigare.github.io](https://darshanbhandigare.github.io/)
-
 ---
 
 ## 📁 About This Project
@@ -77,6 +73,7 @@ This very portfolio, built with HTML and CSS.
 ## 🧠 Skills
 
 - C / C++
+- Java
 - Python
 - Data Structures & Algorithms
 - Generative AI
