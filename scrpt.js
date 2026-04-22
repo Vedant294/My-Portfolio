@@ -36,7 +36,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Handle browser back/forward buttons (SPA)
-window.addEventListener('popstate', () => {
+window.addEventListener('popstate', (e) => {
+    e.preventDefault();
     const hash = window.location.hash;
     if (hash) {
         const target = document.querySelector(hash);
@@ -76,8 +77,8 @@ window.addEventListener('scroll', () => {
 
 // Intersection Observer for fade-in animations (SPA)
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -95,33 +96,30 @@ const observer = new IntersectionObserver((entries) => {
                 });
             }
             
-            // Stagger animation for grid items
-            if (entry.target.classList.contains('projects-grid') || 
-                entry.target.classList.contains('skills-grid') ||
-                entry.target.classList.contains('contact-grid')) {
-                const items = entry.target.children;
-                Array.from(items).forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
+            // Stagger animation for cards
+            if (entry.target.classList.contains('project-card') || 
+                entry.target.classList.contains('skill-category') ||
+                entry.target.classList.contains('contact-card')) {
+                // Individual card animation
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         }
     });
 }, observerOptions);
 
-// Observe all sections and cards
-document.querySelectorAll('section, .project-card, .skill-category, .contact-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+// Observe all sections (but keep them visible)
+document.querySelectorAll('section').forEach(el => {
+    // Don't hide sections, just observe them
     observer.observe(el);
 });
 
-// Observe grids for stagger animation
-document.querySelectorAll('.projects-grid, .skills-grid, .contact-grid').forEach(grid => {
-    observer.observe(grid);
+// Observe cards with initial hidden state
+document.querySelectorAll('.project-card, .skill-category, .contact-card').forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    observer.observe(el);
 });
 
 // Active navigation highlighting (SPA)
@@ -221,15 +219,30 @@ if (window.innerWidth > 768) {
 
 // Preload animation
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s';
-        document.body.style.opacity = '1';
-    }, 100);
+    // Ensure body is visible
+    document.body.style.opacity = '1';
+    
+    // Trigger animations for visible elements
+    const visibleElements = document.querySelectorAll('.project-card, .skill-category, .contact-card');
+    visibleElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, index * 100);
+        }
+    });
 });
 
 // Handle initial hash on page load (SPA)
 window.addEventListener('DOMContentLoaded', () => {
+    // Ensure all sections are visible initially
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'translateY(0)';
+    });
+    
     const hash = window.location.hash;
     if (hash) {
         setTimeout(() => {
@@ -241,24 +254,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
             }
-        }, 100);
+        }, 300);
     }
 });
 
-// Add smooth page transitions (SPA)
-document.querySelectorAll('a:not([href^="#"])').forEach(link => {
-    if (link.hostname === window.location.hostname) {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const href = link.getAttribute('href');
-            
-            // Fade out
-            document.body.style.opacity = '0';
-            
-            setTimeout(() => {
-                window.location.href = href;
-            }, 300);
-        });
+// Handle external links (open in new tab)
+document.querySelectorAll('a[href^="http"]').forEach(link => {
+    if (!link.hasAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
     }
 });
 

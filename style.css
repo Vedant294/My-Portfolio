@@ -307,6 +307,8 @@ body {
 section {
     padding: 5rem 0;
     position: relative;
+    opacity: 1;
+    visibility: visible;
 }
 
 .section-title {
