@@ -1,147 +1,85 @@
-// Particle canvas
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-let W,
-  H,
-  particles = [];
-
-function resize() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
-
-class Particle {
-  constructor() {
-    this.reset();
-  }
-  reset() {
-    this.x = Math.random() * W;
-    this.y = Math.random() * H;
-    this.r = Math.random() * 1.2 + 0.3;
-    this.vx = (Math.random() - 0.5) * 0.3;
-    this.vy = (Math.random() - 0.5) * 0.3;
-    this.alpha = Math.random() * 0.5 + 0.1;
-  }
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(124,111,247,${this.alpha})`;
-    ctx.fill();
-  }
-}
-
-for (let i = 0; i < 120; i++) particles.push(new Particle());
-
-function animParticles() {
-  ctx.clearRect(0, 0, W, H);
-  particles.forEach((p) => {
-    p.update();
-    p.draw();
-  });
-  // Connect nearby
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const d = Math.sqrt(dx * dx + dy * dy);
-      if (d < 100) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(124,111,247,${0.06 * (1 - d / 100)})`;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-    }
-  }
-  requestAnimationFrame(animParticles);
-}
-animParticles();
-
-// Custom cursor
-const cur = document.getElementById("cursor");
-const ring = document.getElementById("cursor-ring");
-let mx = 0,
-  my = 0,
-  rx = 0,
-  ry = 0;
-document.addEventListener("mousemove", (e) => {
-  mx = e.clientX;
-  my = e.clientY;
-});
-function animCursor() {
-  cur.style.left = mx + "px";
-  cur.style.top = my + "px";
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
-  requestAnimationFrame(animCursor);
-}
-animCursor();
-document.querySelectorAll("a, button").forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    cur.style.width = "20px";
-    cur.style.height = "20px";
-    ring.style.width = "50px";
-    ring.style.height = "50px";
-  });
-  el.addEventListener("mouseleave", () => {
-    cur.style.width = "12px";
-    cur.style.height = "12px";
-    ring.style.width = "36px";
-    ring.style.height = "36px";
-  });
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-// Skill bars
-const skillObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll(".skill-bar-fill").forEach((bar) => {
-          bar.style.width = bar.dataset.width + "%";
-        });
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-document.querySelectorAll("#skills").forEach((el) => skillObserver.observe(el));
-
 // Mobile menu toggle
-const hamburger = document.querySelector(".nav-hamburger");
-const navLinks = document.querySelector(".nav-links");
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  hamburger.classList.toggle("active");
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
-// Close menu when clicking a link
-navLinks.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    navLinks.classList.remove("active");
-    hamburger.classList.remove("active");
-  }
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+    } else {
+        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+    }
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
+});
+
+// Add active state to navigation based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
+    });
 });
