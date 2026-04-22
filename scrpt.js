@@ -1,11 +1,34 @@
+// Detect mobile device
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
 if (hamburger) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open on mobile
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 }
 
@@ -14,6 +37,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
@@ -56,23 +80,30 @@ window.addEventListener('popstate', (e) => {
     }
 });
 
-// Navbar background on scroll
+// Navbar background on scroll (optimized with throttle)
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
+let scrollTicking = false;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    
-    // Change navbar background based on scroll
-    if (currentScroll > 50) {
-        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-        navbar.style.boxShadow = 'none';
+    if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+            const currentScroll = window.scrollY;
+            
+            // Change navbar background based on scroll
+            if (currentScroll > 50) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+                navbar.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+            scrollTicking = false;
+        });
+        scrollTicking = true;
     }
-    
-    lastScroll = currentScroll;
 });
 
 // Intersection Observer for fade-in animations (SPA)
@@ -145,20 +176,28 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Parallax effect on hero section
+// Parallax effect on hero section (desktop only)
 const hero = document.querySelector('.hero');
-if (hero) {
+if (hero && !isMobile && window.innerWidth > 768) {
+    let ticking = false;
+    
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        if (scrolled < window.innerHeight) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            hero.style.opacity = 1 - (scrolled / window.innerHeight);
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                if (scrolled < window.innerHeight) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                    hero.style.opacity = 1 - (scrolled / window.innerHeight);
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 }
 
-// Cursor trail effect (optional, for desktop)
-if (window.innerWidth > 768) {
+// Cursor trail effect (desktop only)
+if (!isMobile && !isTouch && window.innerWidth > 768) {
     const coords = { x: 0, y: 0 };
     const circles = document.querySelectorAll('.circle');
 
