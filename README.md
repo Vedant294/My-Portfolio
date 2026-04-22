@@ -1,108 +1,111 @@
-# 🌐 Darshan Bhandigare – Personal Portfolio
+# 🌐 Vedant Borkute - Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Live%20Portfolio-darshanbhandigare.github.io-blue?style=for-the-badge&logo=github)](https://darshanbhandigare.github.io/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/darshan-bhandigare/)
+A modern, responsive Single Page Application (SPA) portfolio showcasing my skills, projects, and experience as a Full Stack Developer.
 
-A personal portfolio website built with **HTML**, **CSS** and **JS**, designed to showcase my skills, projects, certifications, and experience as an aspiring software developer.
+## 🔗 Live Demo
 
----
-
-## 📸 Preview
-
-![Portfolio Preview](https://i.ibb.co/Mkq5M8nv/Capture.jpg)
-
----
-
----
-
-## 📁 About This Project
-
-This portfolio serves as my digital identity — a central place where I present:
-
-- My **background and education**
-- **Projects** I've built
-- **Certifications** I've earned
-- My **skills** and areas of interest
-- A way to **get in touch**
-
----
-
-## 🛠️ Built With
-
-- **HTML5** – Structure and content
-- **CSS3** – Styling and layout
-- **JAVASCRRIPT** – Logic
-- **GitHub Pages** – Hosting and deployment
-
----
+**[View Portfolio](https://vedant294.github.io/My-Portfolio/)**
 
 ## ✨ Features
 
-- Clean, responsive single-page design
-- Project showcase with live demo links
-- Certifications section with credential links
-- Skills overview
-- Contact section with email
+- **Single Page Application (SPA)** - Smooth scrolling navigation without page reloads
+- **Responsive Design** - Fully optimized for mobile, tablet, and desktop
+- **Modern Animations** - Fade-in effects, parallax scrolling, and cursor trail
+- **Gradient Design** - Beautiful purple/indigo gradient theme with glassmorphism
+- **Project Showcase** - 7 live projects with detailed descriptions
+- **Contact Integration** - Direct links to email, phone, GitHub, and LinkedIn
+- **Performance Optimized** - Lazy loading, intersection observers, and smooth transitions
 
----
+## 🛠️ Built With
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with gradients, animations, and flexbox/grid
+- **JavaScript (ES6+)** - SPA functionality, smooth scrolling, and interactive features
+- **Font Awesome** - Icon library
+- **GitHub Pages** - Hosting and deployment
 
 ## 📂 Projects Featured
 
-### 🎨 Paletto – Color Palette Generator
-A responsive web app that generates clean and useful color palettes for design inspiration and frontend projects.
-- 🔗 [Live Demo](https://paletto-color-generator.vercel.app/)
-- 💻 [GitHub Repo](https://github.com/darshanbhandigare/paletto-color-generator)
+1. **Rayeva AI** - Sustainable commerce platform with AI-powered cataloging
+2. **Golff Platform** - Golf charity subscription system with Stripe integration
+3. **Mint Health Hub** - Healthcare management with WhatsApp bot
+4. **DOM Tree Analyzer** - React tool for visualizing DOM structures
+5. **TaskPlanet** - Full-stack social media application
+6. **Karo Pitch** - Startup landing page with glassmorphism design
+7. **IDR** - Institute of Digital Risk website
 
----
+## 🎨 Design Features
 
-## 🏅 Certifications
+- **Color Scheme**: Purple (#6366f1) and Indigo (#8b5cf6) gradients
+- **Typography**: Inter font family for clean, modern look
+- **Animations**: 
+  - Smooth fade-in on scroll
+  - Floating gradient orbs
+  - Parallax hero section
+  - Cursor trail effect (desktop)
+  - Staggered grid animations
+- **Effects**: Glassmorphism, backdrop blur, gradient shifts
 
-| Certificate | Issuer | Year |
-|---|---|---|
-| Deloitte Job Simulation (Virtual Internship) | Deloitte / The Forage | 2025 |
-| Oracle Cloud Infrastructure 2025 – Generative AI Professional | Oracle | 2025 |
-| Artificial Intelligence Fundamentals | Credly | 2025 |
-| Web Development Fundamentals | Credly | 2025 |
+## � Local Development
 
----
+```bash
+# Clone the repository
+git clone https://github.com/Vedant294/My-Portfolio.git
 
-## 🧠 Skills
+# Navigate to project directory
+cd My-Portfolio
 
-- C / C++
-- Java
-- Python
-- Data Structures & Algorithms
-- Generative AI
-- Web Development (HTML, CSS)
-- Git & GitHub
-- Planning & Formal Communication
+# Open with a local server (Python)
+python -m http.server 8000
 
----
+# Or use any other local server
+# Then open http://localhost:8000
+```
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🎯 Key Sections
+
+- **Hero** - Introduction with animated gradient name and social links
+- **About** - Background, education, and professional summary
+- **Skills** - Technical skills organized by category with hover effects
+- **Projects** - Portfolio of 7 live projects with tech stacks
+- **Contact** - Multiple ways to get in touch
+
+## 📧 Contact
+
+- **Email**: [vedantborkute2004@gmail.com](mailto:vedantborkute2004@gmail.com)
+- **Phone**: +91 8698312939
+- **GitHub**: [@Vedant294](https://github.com/Vedant294)
+- **LinkedIn**: [vedant-borkute-5bb812277](https://linkedin.com/in/vedant-borkute-5bb812277/)
 
 ## 🎓 Education
 
-**D.G. Ruparel College of Arts, Science and Commerce** — Mumbai, Maharashtra  
-Bachelor of Science in Information Technology  
-*2025 – 2028 (Expected)*
+**Bachelor of Engineering in Computer Science**  
+2022 – Present
 
----
+## � Tech Stack
 
-## 📬 Contact
-
-- 📧 Email: [darshanbhandigare9@gmail.com](mailto:darshanbhandigare9@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/darshan-bhandigare](https://www.linkedin.com/in/darshan-bhandigare/)
-- 🌐 Portfolio: [darshanbhandigare.github.io](https://darshanbhandigare.github.io/)
-
----
-
-## 🚀 Deployment
-
-This site is deployed using **GitHub Pages** directly from the `main` branch.
-
-
-
----
+**Languages**: JavaScript, Python, Java  
+**Frontend**: HTML, CSS, Tailwind CSS, React  
+**Backend**: Node.js, Express.js  
+**Databases**: MongoDB, MySQL  
+**Tools**: Git, GitHub, Postman, Google Cloud Platform
 
 ## 📄 License
 
-© 2025 Darshan Bhandigare. All Rights Reserved.
+© 2024 Vedant Borkute. All rights reserved.
+
+## � Acknowledgments
+
+- Font Awesome for icons
+- Google Fonts for Inter typography
+- GitHub Pages for hosting
+
+---
+
+**Built with ❤️ by Vedant Borkute**
